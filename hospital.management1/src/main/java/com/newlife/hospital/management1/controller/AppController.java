@@ -3,19 +3,25 @@ package com.newlife.hospital.management1.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.newlife.hospital.management1.login.customPatientsDetail;
 
 import com.newlife.hospital.management1.model.Patients;
+
 import com.newlife.hospital.management1.repositary.PatientsRepositary;
 
 @Controller
 public class AppController {
 	@Autowired
 	private PatientsRepositary repo;
+	
 	@GetMapping("")
     public String viewHomePage() {
         return "index";
@@ -42,5 +48,18 @@ public class AppController {
 		List<Patients> listUsers = repo.findAll();
 		model.addAttribute("listUsers", listUsers);
 		return "users";
+	}
+	
+	@GetMapping("/book")
+	public String bookAppointment() {
+		
+		
+		return "bookapp";
+	}
+	@GetMapping("/booklab")
+	public String bookLabAppointment() {
+		
+		
+		return "booklab";
 	}
 }

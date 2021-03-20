@@ -58,5 +58,10 @@ public class customPatientsDetail implements UserDetails{
 		return true;
 	}
 	
-
+	 public String getName() {
+	        return this.patient.getName();
+	    }
+	 public String getEmail() {
+	        return this.patient.getEmail();
+	    }
 }

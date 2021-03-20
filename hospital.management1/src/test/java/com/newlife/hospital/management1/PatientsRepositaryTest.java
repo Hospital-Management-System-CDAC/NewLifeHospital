@@ -25,23 +25,23 @@ public class PatientsRepositaryTest {
 	private TestEntityManager entityManager;
 	@Autowired
 	private PatientsRepositary repo;
-//	@Test
-//	public void testCreatePatients() {
-//		Patients p=new Patients();
-//		p.setEmail("radedewwj@gmail.com");
-//		p.setPassword("1ddw2abs");
-//		p.setName("rddawj");
-//		p.setAge(22);
-//		p.setGender("M");
-//		p.setAddress("bangalore");
-//		p.setPhoneNumber(9892);
-//
-//		Patients savedUser = repo.save(p);
-//		
-//		Patients existUser = entityManager.find(Patients.class, savedUser.getId());
-//		
-//		assertThat(p.getEmail()).isEqualTo(existUser.getEmail());
-//	}
+	@Test
+	public void testCreatePatients() {
+		Patients p=new Patients();
+		p.setEmail("radedewwj@gmail.com");
+		p.setPassword("1ddw2abs");
+		p.setName("rddawj");
+		p.setAge(22);
+		p.setGender("M");
+		p.setAddress("bangalore");
+		p.setPhoneNumber(9892);
+
+		Patients savedUser = repo.save(p);
+		
+		Patients existUser = entityManager.find(Patients.class, savedUser.getId());
+		
+		assertThat(p.getEmail()).isEqualTo(existUser.getEmail());
+	}
 
 	@Test
 	public void testFindByEmail() {
