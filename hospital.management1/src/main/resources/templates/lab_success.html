@@ -18,17 +18,46 @@
                 <td><span th:text="${lab.id}"></span></td>
             </tr>
             <tr>
-                <td><strong>Test name:</strong></td>
+                <td><strong> Name:</strong></td>
+                <td><span th:text="${lab.name}"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Patient Email:</strong></td>
+                <td><span th:text="${lab.email}"></span></td>
+            </tr>
+             <tr>
+                <td><strong>Gender:</strong></td>
+                <td><span th:text="${lab.gender}"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Age:</strong></td>
+                <td><span th:text="${lab.age}"></span></td>
+            </tr>
+             <tr>
+                <td><strong>Address:</strong></td>
+                <td><span th:text="${lab.address}"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Phone Number:</strong></td>
+                <td><span th:text="${lab.phoneNumber}"></span></td>
+            </tr>
+            <tr>
+                <td><strong>Test Name:</strong></td>
                 <td><span th:text="${lab.testname}"></span></td>
             </tr>
             <tr>
                 <td><strong>Date:</strong></td>
                 <td><span th:text="${lab.date}"></span></td>
             </tr>
+            <tr>
+                <td><strong>Time Slot:</strong></td>
+                <td><span th:text="${lab.slot}"></span></td>
+            </tr>
          </tbody>
     </table>
 		<form th:action="@{/logout}" method="post">
         <input type="submit" value="Sign Out" />
+        </form>
 	</div>
 	
 </body>

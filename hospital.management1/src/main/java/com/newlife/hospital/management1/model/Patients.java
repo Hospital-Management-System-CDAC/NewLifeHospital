@@ -1,10 +1,15 @@
 package com.newlife.hospital.management1.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,13 +34,29 @@ public class Patients {
 	@Column(name = "gender", nullable = false, length = 20)
 	private String gender;
 	
-	@Column(name = "address", nullable = false, length = 20)
+	@Column(name = "address", nullable = false, length = 100)
 	private String address;
 	
 	@Column(name = "phone", nullable = false, length = 50)
 	private long phoneNumber;
+	
 
-	public Long getId() {
+	
+	public Patients(Long id, String email, String password, String name, int age, String gender, String address,
+			long phoneNumber) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		
+	}
+
+		public Long getId() {
 		return id;
 	}
 
@@ -99,18 +120,7 @@ public class Patients {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public Patients(Long id, String email, String password, String name, int age, String gender, String address,
-			long phoneNumber) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.password = password;
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-		this.address = address;
-		this.phoneNumber = phoneNumber;
-	}
+	
 
 	public Patients() {
 		super();

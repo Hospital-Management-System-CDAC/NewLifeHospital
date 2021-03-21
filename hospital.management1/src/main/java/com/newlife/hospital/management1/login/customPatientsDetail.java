@@ -64,4 +64,16 @@ public class customPatientsDetail implements UserDetails{
 	 public String getEmail() {
 	        return this.patient.getEmail();
 	    }
+	 public int getAge() {
+	        return this.patient.getAge();
+	    }
+	 public String getGender() {
+	        return this.patient.getGender();
+	    }
+	 public String getAddress() {
+	        return this.patient.getAddress();
+	    }
+	 public long getPhoneNumber() {
+	        return this.patient.getPhoneNumber();
+	    }
 }

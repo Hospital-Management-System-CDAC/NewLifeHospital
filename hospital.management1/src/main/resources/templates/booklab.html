@@ -15,16 +15,22 @@
 <form th:action="@{/processLab}"   th:object="${lab}" 
 			method="post" style="max-width: 600px; margin: 0 auto;">
 <div class="m-3">
-			<div class="form-group row">
+			
+			    <input type="hidden" name="name" th:value="${#request.userPrincipal.principal.Name}" />
+				<input type="hidden" name="email" th:value="${#request.userPrincipal.principal.Email}" />
+		        <input type="hidden" name="age" th:value="${#request.userPrincipal.principal.Age}" />
+			    <input type="hidden" name="address" th:value="${#request.userPrincipal.principal.Address}" />	    
+				<input type="hidden" name="gender" th:value="${#request.userPrincipal.principal.Gender}" />
+				<input type="hidden" name="phoneNumber" th:value="${#request.userPrincipal.principal.PhoneNumber}" />
+				<div class="form-group row">
 				<label class="col-4 col-form-label">test Name </label>
 				<div class="col-8">
-<!-- 					<input type="text" th:field="*{testname}" name="testname" class="form-control" required /> -->
-<!-- 					<input type="text"  name="testname" th:value="${testname}" class="form-control"  /> -->
+
 					<select name="testname" th:value="${testname}" class="form-control" >
-							<option value="Outpatientdepartment">Outpatient department</option>
-							<option value="ENT">ENT</option>
-							<option value="SURGERY">SURGERY</option>
-							<option value="SKIN">SKIN</option>
+							<option value="Blood Sugar Test">Blood Sugar Test</option>
+							<option value="CT Scan">CT Scan</option>
+							<option value="Dengue IgG Test">Dengue IgG Test</option>
+							<option value="ECG">ECG</option>
 						</select>
 				</div>
 			</div>
@@ -34,12 +40,23 @@
 			<div class="form-group row">
 				<label class="col-4 col-form-label"> Date </label>
 				<div class="col-8">
-<!-- 					<input type="text" th:field="*{date}" name="date" class="form-control"		/> -->
-					<input type="text" name="date" th:value="${date}" class="form-control" />
+
+					<input type="date" name="date" th:value="${date}" class="form-control" />
 				</div>
 			</div>
 			
-			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">test Name </label>
+				<div class="col-8">
+
+					<select name="slot" th:value="${slot}" class="form-control" >
+							<option value="10:00AM-12:00PM">10AM-12PM</option>
+							<option value="12:00PM-2:00PM">12PM-2PM</option>
+							<option value="3:00PM-5:00PM">3PM-5PM</option>
+							<option value="5:00PM-7:00PM">5PM-7PM</option>
+						</select>
+				</div>
+			</div>
 			
 			
 			<div>
