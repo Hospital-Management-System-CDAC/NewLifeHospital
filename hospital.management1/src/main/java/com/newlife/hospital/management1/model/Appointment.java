@@ -16,7 +16,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 @Entity
 @Table(name = "Appoinment")
-public class Appoinment {
+public class Appointment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -38,11 +38,11 @@ public class Appoinment {
 		return "Appoinment [id=" + id + ", doctername=" + doctername + ", department=" + department + ", date=" + date
 				+ "]";
 	}
-	public Appoinment() {
+	public Appointment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Appoinment(long id, String doctername, String department, String date) {
+	public Appointment(long id, String doctername, String department, String date) {
 	super();
 	this.id = id;
 	this.doctername = doctername;

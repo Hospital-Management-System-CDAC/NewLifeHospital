@@ -13,7 +13,7 @@ import org.springframework.test.annotation.Rollback;
 
 import com.newlife.hospital.management1.model.Lab;
 
-import com.newlife.hospital.management1.repositary.LabRepositary;
+import com.newlife.hospital.management1.repositary.LabRepository;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
@@ -22,7 +22,7 @@ public class LabRepositaryTest {
 	@Autowired
 	private TestEntityManager entityManager;
 	@Autowired
-	private LabRepositary repo3;
+	private LabRepository repo3;
 	@Test
 	public void testCreateLab() throws ParseException {
 			

@@ -11,7 +11,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
 
 import com.newlife.hospital.management1.model.Patients;
-import com.newlife.hospital.management1.repositary.PatientsRepositary;
+import com.newlife.hospital.management1.repositary.PatientsRepository;
 
 
 
@@ -24,7 +24,7 @@ public class PatientsRepositaryTest {
 	@Autowired
 	private TestEntityManager entityManager;
 	@Autowired
-	private PatientsRepositary repo;
+	private PatientsRepository repo;
 	@Test
 	public void testCreatePatients() {
 		Patients p=new Patients();

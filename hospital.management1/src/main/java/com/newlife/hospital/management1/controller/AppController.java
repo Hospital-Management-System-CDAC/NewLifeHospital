@@ -15,12 +15,12 @@ import com.newlife.hospital.management1.login.customPatientsDetail;
 
 import com.newlife.hospital.management1.model.Patients;
 
-import com.newlife.hospital.management1.repositary.PatientsRepositary;
+import com.newlife.hospital.management1.repositary.PatientsRepository;
 
 @Controller
 public class AppController {
 	@Autowired
-	private PatientsRepositary repo;
+	private PatientsRepository repo;
 	
 	@GetMapping("")
     public String viewHomePage() {
@@ -61,5 +61,9 @@ public class AppController {
 		
 		
 		return "booklab";
+	}
+	@GetMapping("/login")
+	public String customLogin() {
+		return "login";
 	}
 }

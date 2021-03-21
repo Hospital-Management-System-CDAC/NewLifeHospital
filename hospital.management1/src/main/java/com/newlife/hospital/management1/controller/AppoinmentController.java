@@ -4,16 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.newlife.hospital.management1.model.Appoinment;
-import com.newlife.hospital.management1.repositary.AppoinmentRepositary;
+import com.newlife.hospital.management1.model.Appointment;
+import com.newlife.hospital.management1.repositary.AppointmentRepository;
 
 @Controller
 public class AppoinmentController {
 	@Autowired
-	private AppoinmentRepositary repo1;
+	private AppointmentRepository repo1;
 	
 	@PostMapping("/processAppoinment")
-	public String processAppoinment(Appoinment appoinment) {
+	public String processAppoinment(Appointment appoinment) {
 		
 	repo1.save(appoinment);
 		
