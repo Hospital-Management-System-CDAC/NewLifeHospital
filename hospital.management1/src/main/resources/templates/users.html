@@ -13,7 +13,7 @@
 		
 			<h1>
 			Welcome <b>[[${#request.userPrincipal.principal.Name}]]</b><br>
-<!-- 			Email is <b>[[${#request.userPrincipal.principal.Email}]]</b><br> -->
+			Email is <b>[[${#request.userPrincipal.principal.Email}]]</b><br>
 <!-- 			Welcome <b>[[${#request.userPrincipal.principal.Age}]]</b><br> -->
 <!-- 			Email is <b>[[${#request.userPrincipal.principal.Gender}]]</b><br> -->
 <!-- 			Welcome <b>[[${#request.userPrincipal.principal.Address}]]</b><br> -->
@@ -56,6 +56,9 @@
 	</div>
 <h3><a th:href="@{/book}">Book Appointment</a></h3>
 <h3><a th:href="@{/booklab}">Book Lab Facility</a></h3>
+<h3><a th:href="@{/oldappoinment}">Check Old Appointment</a></h3>
+<h3><a th:href="@{/oldlab}">Check Old Lab Booking</a></h3>
+
 		</div>
 </body>
 </html>
