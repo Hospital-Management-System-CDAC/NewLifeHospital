@@ -1,56 +1,61 @@
-import React from 'react';  
-import logo from './logo.svg';  
-import './App.css';  
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Login from './Login';  
-import Reg from './Reg';  
-import Dashboard from './Dashboard';  
-import car from './images/download.png';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';   
-function App() {  
-  return (  
-    
-    <Router>    
-      
-      <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-  <nav class="navbar navbar-expand-sm bg-dark justify-content-center">
-                  
-                  <div><h2 className="navbar-brand"  class="display-4" style={{color: "lightgreen"}}> NEWLIFE HOSPITAL
-                  </h2></div>
-                 
-                  </nav>
-    <ul class="nav navbar-nav navbar-left">
-    <li className="nav-item" class="glyphicon glyphicon-user">    
-                <Link to={'/Login'} className="nav-link">
-                  <h4>Login</h4></Link>    
-              </li>    
-              <li className="nav-item"  class="glyphicon glyphicon-log-in">    
-                <Link to={'/Signup'} className="nav-link">
-                  <h4>Sign Up</h4></Link>    
-              </li>  
-    </ul>
-  </div>
-</nav>
+import React, { Component } from "react";
 
-  
-       
-        <Switch>    
-          <Route exact path='/Login' component={Login} />    
-          <Route path='/Signup' component={Reg} />    
-       
-        </Switch>    
-        <Switch>  
-        <Route path='/Dashboard' component={Dashboard} />    
-        </Switch>  
-        <div>
-             <img src={car} alt="this is car image" />
-        </div>
-      
-         
-    </Router>   
-   
-  );  
-}  
-  
-export default App;  
+import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Login from "./components/login/Login.jsx";
+import Reg from "./components/register/Reg.jsx";
+import Dashboard from "./Dashboard";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Welcome from "./components/welcome/Welcome";
+import Footer from "./components/layout/Footer.jsx";
+import Feed from "./components/profile/Feed.jsx";
+import admin from "./components/adminModule/admin.jsx";
+import Appoinment from "./components/profile/Appoinment.jsx";
+import ListPatientComponent from "./components/profile/ListPatientComponent.jsx";
+
+
+import AuthAPI from "./services/AuthAPI";
+
+const authentication = {
+  isAuthenticated: false,
+  onAuthentication() {
+    this.isAuthenticated = true;
+  },
+  getLogInStatus() {
+    return this.isLoggedIn;
+  },
+};
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: null,
+      isAuthenticated: false,
+    };
+  }
+  render() {
+    return (
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Welcome} />
+            <Route path="/Login" component={Login} />
+            <Route path="/Signup" component={Reg} />
+            <Route path="/Feed" component={Feed} />
+            <Route path = "/appoin-doctor/:id" component = {Appoinment}></Route>
+            <Route path = "/view-patient/:id" component = {ListPatientComponent}></Route>
+            <Route path="/admin" component={admin} />
+          </Switch>
+          <Switch>
+            <Route path="/Dashboard" component={Dashboard} />
+          </Switch>
+          <div>
+            <Footer></Footer>
+          </div>
+        </Router>
+      </div>
+    );
+  }
+}
+export default App;
