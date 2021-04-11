@@ -14,6 +14,7 @@ public interface PatientsRepository extends JpaRepository<Patients, Long>{
 	public Patients find(@Param("username") String email);
 	@Query("from Patients where email = :abc and password= :def")
 	public Optional<Patients> match(@Param("abc") String email,@Param("def") String password);
+	Patients findByEmail(String email);
 	
 	
 	
