@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: NISHANT BISHNOI
+Build-Jdk: 14
+Implementation-Title: hospital.management1
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.newlife
+Implementation-URL: https://spring.io/projects/spring-boot/hospital.mana
+ gement1
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+	<title>Old Appointment</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container text-center">
+<h1>List of Old Appointment</h1>
+	<div>
+		<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>User ID</th>
+					<th>E-mail</th>
+					<th> Name</th>
+					<th>Age</th>
+					<th>Gender</th>
+					<th> Address</th>
+					<th>Phone</th>
+					<th>Doctername</th>
+					<th>Department</th>
+					<th> Date</th>
+					<th>Slot</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="appointment: ${listUser}">
+					<td th:text="${appointment.id}">User ID</td>
+					<td th:text="${appointment.email}">E-mail</td>
+					<td th:text="${appointment.name}">Name</td>
+					<td th:text="${appointment.age}">Age</td>
+					<td th:text="${appointment.gender}">gender</td>
+					<td th:text="${appointment.address}">address</td>
+					<td th:text="${appointment.phoneNumber}">phone</td>
+					<td th:text="${appointment.doctername}">doctername</td>
+					<td th:text="${appointment.department}">department</td>
+					<td th:text="${appointment.date}">date</td>
+					<td th:text="${appointment.slot}">slot</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h3><a th:href="@{/patients}">Home</a></h3>
+	<form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out" />
+        </form>
+        
+	</div>
+	
+</body>
+</html>
